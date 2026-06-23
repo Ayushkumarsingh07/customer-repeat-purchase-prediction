@@ -12,6 +12,7 @@ Requires these files in the same folder:
 """
 
 import json
+from pathlib import Path
 import joblib
 import numpy as np
 import pandas as pd
@@ -29,6 +30,7 @@ st.set_page_config(
 # ---------------------------------------------------------------------------
 @st.cache_resource
 def load_artifacts():
+    base = Path(__file__).parent
     model = joblib.load(base / "churn_model.pkl")
     with open(base / "category_encoding.json") as f:
         category_encoding = json.load(f)
