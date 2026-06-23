@@ -1,0 +1,1 @@
+["payment_value", "payment_installments_max", "payment_type_count", "n_items", "total_price", "total_freight", "avg_item_price", "delivery_delay_days", "delivery_speed_days", "approval_speed_hours", "purchase_dayofweek", "purchase_month", "has_review", "review_score_rounded", "state_target_enc", "category_target_enc"]
