@@ -29,14 +29,14 @@ st.set_page_config(
 # ---------------------------------------------------------------------------
 @st.cache_resource
 def load_artifacts():
-    model = joblib.load("churn_model.pkl")
-    with open("category_encoding.json") as f:
+    model = joblib.load(base / "churn_model.pkl")
+    with open(base / "category_encoding.json") as f:
         category_encoding = json.load(f)
-    with open("state_encoding.json") as f:
+    with open(base / "state_encoding.json") as f:
         state_encoding = json.load(f)
-    with open("global_mean.json") as f:
+    with open(base / "global_mean.json") as f:
         global_mean = json.load(f)["global_mean"]
-    with open("feature_columns.json") as f:
+    with open(base / "feature_columns.json") as f:
         feature_columns = json.load(f)
     explainer = shap.TreeExplainer(model)
     return model, category_encoding, state_encoding, global_mean, feature_columns, explainer
